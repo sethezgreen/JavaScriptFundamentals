@@ -6,7 +6,7 @@ const BoxDisplay = (props) => {
         <div style={{display: "inline-grid"}}>
             {
                 boxes.map((box, idx) => (
-                    <div key={idx} style={{backgroundColor: box.color, width: 100, height: 100, margin: 15}}>
+                    <div key={idx} style={{backgroundColor: box.color, width: box.width, height: box.height, margin: 15}}>
                     </div>
                 ))
             }
