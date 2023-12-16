@@ -7,7 +7,7 @@ function App() {
 const [toDoList, setToDoList] = useState([])
 
   return (
-    <>
+    <div className="container">
       <ListForm
         toDoList = {toDoList} 
         setToDoList = {setToDoList}
@@ -16,7 +16,7 @@ const [toDoList, setToDoList] = useState([])
         toDoList= {toDoList}
         setToDoList = {setToDoList}
         />
-    </>
+    </div>
   )
 }
 

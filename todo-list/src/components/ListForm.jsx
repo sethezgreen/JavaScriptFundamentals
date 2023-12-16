@@ -10,7 +10,7 @@ const ListForm = (props) => {
 
         const newItem = {
             description,
-            isCompleted
+            isCompleted: false
         }
         setToDoList([...toDoList, newItem])
         setDescription("")
@@ -20,7 +20,7 @@ const ListForm = (props) => {
         <div>
             <h1>ToDo List</h1>
             <h2>Add List Item</h2>
-            <form onSubmit={createListItem}>
+            <form onSubmit={createListItem} className="display-flex">
                 <div>
                     <label>Description:</label>
                     <input type="text" name="description" onChange={ (e) => setDescription(e.target.value)} value={description}/>
