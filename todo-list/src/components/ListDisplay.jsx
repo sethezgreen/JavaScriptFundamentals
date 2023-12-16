@@ -12,6 +12,12 @@ const ListDisplay = (props) => {
         })
         setToDoList(updatedToDoList)
     }
+
+    const removeFromToDoList = (item) => {
+        const updatedToDoList = toDoList.filter((itemFromFilter) => itemFromFilter !== item)
+        setToDoList(updatedToDoList)
+    }
+
     return (
         <div>
             {
@@ -23,6 +29,7 @@ const ListDisplay = (props) => {
                             <p>{item.description}</p>
                         }
                         <input type="checkbox" onClick={() => toggleCompleted(item)} defaultChecked={item.isCompleted}/>
+                        <button onClick={() => removeFromToDoList(item)}>Delete</button>
                     </div>
                 ))
             }
