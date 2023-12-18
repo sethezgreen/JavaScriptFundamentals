@@ -1,19 +1,29 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Tabs from './components/Tabs'
+import Content from './components/Content'
 
 function App() {
-  const [tabs, setTabs] = useState([])
+  const tabsArray = [
+    { label: "Tab 1", content: "This is tab 1 content"},
+    { label: "Tab 2", content: "This is tab 2 content"},
+    { label: "Tab 3", content: "This is tab 3 content"},
+    { label: "Tab 4", content: "This is tab 4 content"}
+  ]
+  const [tabs, setTabs] = useState(tabsArray)
+  const [currentTabIndex, setCurrentTabIndex] = useState(0)
 
   return (
-    <div className='app'>
-      <div className='tabs'>
-        {/* map through tabs */}
-      </div>
-      <div className='content'>
-        {/* logic for displaying certain tabs */}
-      </div>
+    <div>
+      <Tabs
+        tabs = { tabs }
+        currentTabIndex = { currentTabIndex }
+        setCurrentTabIndex = { setCurrentTabIndex }
+      />
+      <Content
+        tabs = { tabs }
+        currentTabIndex = { currentTabIndex }
+      />
     </div>
   )
 }
