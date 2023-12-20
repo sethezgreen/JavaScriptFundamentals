@@ -1,2 +1,2 @@
-# JavaScriptFundamentals
-These are projects from the JavaScript Fundamentals Portion of Coding Dojo
+# JavaScript React Projects
+These are projects from the JavaScript React stack of Coding Dojo
