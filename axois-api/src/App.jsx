@@ -7,7 +7,7 @@ function App() {
   const [error, setError] = useState('')
   
   useEffect(() => {
-    axios.get('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0')
+    axios.get('https://pokeapi.co/api/v2/pokemon?limit=607&offset=0')
       .then((response) => {
         setPokemonList(response.data.results)
         setError('')
@@ -20,7 +20,19 @@ function App() {
 
   return (
     <>
-      
+      <h1>Pokemon API</h1>
+      {
+        error.length >0?
+        <p>{error}</p>:
+        null
+      }
+      {
+        pokemonList.map((pokemon, idx) => (
+          <ul key={idx}>
+            <li>{pokemon.name}</li>
+          </ul>
+        ))
+      }
     </>
   )
 }
