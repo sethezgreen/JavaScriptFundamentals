@@ -16,20 +16,13 @@ const Home = (props) => {
   );
 }
     
-const Num = (props) => {
-  const { number } = useParams()
-
-  return (
-    
-    <h1>The number is: { number } </h1>
-  );
-}
-    
 const Word = (props) => {
   const { word } = useParams()
 
   return (
-    <h1>The word is: { word }</h1>
+    isNaN(word)?
+    <h1>The word is: { word }</h1>:
+    <h1>The number is: { word }</h1>
   )
 }
 
@@ -48,7 +41,6 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/:number" element={<Num />}/>
         <Route path="/:word" element={<Word />}/>
         <Route path="/:word/:textColor/:backgroundColor" element={<StyledWord />} />
       </Routes>
